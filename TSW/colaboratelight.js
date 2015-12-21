@@ -1,18 +1,18 @@
 /*!
  * The following copyright notice may not be removed under any circumstances.
- * 
+ *
  * Copyright:
  * Copyright (c) 2003 by This Font is designed by Ralph Oliver du Carrois. All
  * rights reserved.
- * 
+ *
  * Trademark:
  * Colaborate Light is a trademark of This Font is designed by Ralph Oliver du
  * Carrois.
- * 
+ *
  * Description:
  * Copyright (c) 2003 by This Font is designed by Ralph Oliver du Carrois. All
  * rights reserved.
- * 
+ *
  * Manufacturer:
  * This Font is designed by Ralph Oliver du Carrois
  */

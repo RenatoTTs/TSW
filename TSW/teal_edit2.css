@@ -9,7 +9,7 @@ body,body>.multibg>.multibg,.jqueryslidemenu ul ul,.partial_gradient_slide .slid
 .tabs_button a.current,.fancy_header span,.minimal_table th{/*:Color Scheme*/
 background-color:#048899;}
 h1,.post_title a,
-a:hover,.fancy_link,.dropcap2,.pullquote3,.highlight2,h5{/*:Color Scheme*/	
+a:hover,.fancy_link,.dropcap2,.pullquote3,.highlight2,h5{/*:Color Scheme*/
 color:#048899;}
 .post_more_link,.comment-reply-link,.comment-edit-link,.post-edit-link,.wp-pagenavi .current,.paged-navigation .current,
 body,#header_extras,#sub_footer,.jqueryslidemenu ul li ul,
@@ -30,17 +30,17 @@ background-image:url(http://www.kelenservices.com/wp-content/themes/persuasion-2
 /*:General Typography ~*~*/
 body{/*:Body Font */
 color:#666;font-size:12px;font-weight:normal;font-style:normal;font-family:Arial, Helvetica, sans-serif;}
-h1{/*:h1 Font*/ 
+h1{/*:h1 Font*/
 /*color:#888@;*/font-size:40px;font-weight:bold;font-style:normal;font-family:colaboratethin;}
-h2{/*:h2 Font*/ 
+h2{/*:h2 Font*/
 color:#444;font-size:20px;font-weight:normal;font-style:normal;font-family:colaboratethin;}
-h3{/*:h3 Font*/ 
+h3{/*:h3 Font*/
 color:#444;font-size:20px;font-weight:bold;font-style:normal;font-family:colaboratethin;}
-#main h4,#intro h4{/*:h4 Font*/ 
+#main h4,#intro h4{/*:h4 Font*/
 color:#444;font-size:31px;font-weight:normal;font-style:normal;font-family:colaboratelight;}
-h5{/*:h5 Font*/ 
+h5{/*:h5 Font*/
 /*color:#444@;*/font-size:10px;font-weight:normal;font-style:normal;font-family:inherit;}
-h6{/*:h6 Font*/ 
+h6{/*:h6 Font*/
 color:#aaa;font-size:8px;font-weight:normal;font-style:normal;font-family:inherit;}
 a{/*:Link*/
 color:#aaa;text-decoration:none;}
@@ -56,7 +56,7 @@ background-image:url(teal_edit/dark_bg.png);background-color:#008899;background-
 
 
 /*:Header ~*~*/
-.logo a{/*:Logo Font*/ 
+.logo a{/*:Logo Font*/
 color:#eee;font-size:18px;font-weight:normal;font-style:normal;font-family:colaboratethin;}
 #header{/*:Header Background */
 background-image:url();background-color:#f0f3ff;background-repeat:repeat-x;background-attachment:scroll;background-position:center bottom;}
@@ -80,11 +80,11 @@ border-top-color:#bfbfbf;border-top-width:1px;border-top-style:solid;}
 color:#eee;font-size:12px;font-weight:normal;font-style:normal;font-family:inherit;}
 #header+#intro a{/*:Intro Links */
 color:#eee;text-decoration:none;}
-#intro .intro_title{/*:Intro Title Font */ 
+#intro .intro_title{/*:Intro Title Font */
 color:#eee;font-size:62px;font-weight:normal;font-style:normal;font-family:colaboratethin;}
-#intro .teaser{/*:Intro Teaser Font */ 
+#intro .teaser{/*:Intro Teaser Font */
 color:#eee;font-size:20px;font-weight:normal;font-style:normal;font-family:colaboratelight;}
-#slider_module+#intro h3{/*:Call to Action Font*/ 
+#slider_module+#intro h3{/*:Call to Action Font*/
 color:#888;font-size:24px;font-weight:normal;font-style:normal;font-family:colaboratelight;}
 #breadcrumbs,#breadcrumbs a{/*:Breadcrumbs Font */
 color:#ccc;font-size:10px;font-weight:normal;font-style:normal;font-family:inherit;}
@@ -138,9 +138,9 @@ background-image:url(teal_edit/sub_footer.png);/*background-color:transparent@;*
 
 
 /*:Misc ~*~*/
-.toggle a,.toggle_accordion a{/*:Toggle Title Font*/ 
+.toggle a,.toggle_accordion a{/*:Toggle Title Font*/
 color:#888;font-size:15px;font-weight:normal;font-style:normal;font-family:colaboratelight;}
-#content .teaser{/*:Content Teaser Font */ 
+#content .teaser{/*:Content Teaser Font */
 color:#888;font-size:20px;font-weight:normal;font-style:normal;font-family:colaboratelight;}
 /*:Misc End ~*~*/
 

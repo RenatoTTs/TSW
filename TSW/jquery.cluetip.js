@@ -414,13 +414,13 @@
         tipY = posY - opts.dropShadowSteps + tOffset;
 
 	  } else if ( opts.positionBy == 'customTop' ) {
-		tipY = mouseY - tipHeight - tOffset - 18; 
+		tipY = mouseY - tipHeight - tOffset - 18;
 		direction = 'top';
-		
+
 	  } else if ( opts.positionBy == 'customBottom' ) {
 		tipY = mouseY + tOffset + 5;
         direction = 'bottom';
-		
+
       } else if ( (posX < mouseX && Math.max(posX, 0) + tipWidth > mouseX) || opts.positionBy == 'bottomTop') {
         if (posY + tipHeight + tOffset > baseline && mouseY - sTop > tipHeight + tOffset) {
           tipY = mouseY - tipHeight - tOffset;
@@ -459,7 +459,7 @@
       if ($dropShadow && $dropShadow.length) {
         $dropShadow.hide().css({height: tipHeight, width: tipInnerWidth, zIndex: $link.data('cluetip').zIndex-1}).show();
       }
-		
+
 	  if(opts.fx.open == 'custom'){
 		$cluetip.css('display','block');
 	  }else{

@@ -1,7 +1,7 @@
 jQuery.noConflict();
 jQuery(document).ready(function() {
-	
-	/* 
+
+	/*
 	 * Tab functions
 	 */
 	if(jQuery('ul.tabs').length > 0){
@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
 	}
 	if(jQuery('.tabs_vertical_frame').length > 0){
 		jQuery('.tabs_vertical_frame').tabs('> .tabs_vertical_content');
-		jQuery('.tabs_vertical li').click(function(){ jQuery(this).parent().children().removeClass('current'); 
+		jQuery('.tabs_vertical li').click(function(){ jQuery(this).parent().children().removeClass('current');
 			jQuery(this).addClass('current');
 		});
 	}
@@ -25,8 +25,8 @@ jQuery(document).ready(function() {
 			Cufon.refresh();
 		});
 	}
-	
-	/* 
+
+	/*
 	 * Hover fade
 	 */
 	jQuery('.hover_fade_js').live('hover', function(e) {
@@ -36,9 +36,9 @@ jQuery(document).ready(function() {
 		if( e.type == 'mouseleave' )
 			jQuery(this).stop().animate({opacity:1},400);
 	});
-	
-	/* 
-	 * toggle functions 
+
+	/*
+	 * toggle functions
 	 */
 	jQuery('.toggle').toggle(function(){
 		jQuery(this).addClass('active');
@@ -49,11 +49,11 @@ jQuery(document).ready(function() {
 	jQuery('.toggle').click(function(){
 		jQuery(this).next('.toggle_content').slideToggle();
 	});
-	
+
 	jQuery('.toggle_frame_set').each(function(i) {
 		var _this = jQuery(this),
 		    toggle = _this.find('.toggle_accordion');
-		
+
 		toggle.click(function(){
 			if( jQuery(this).next().is(':hidden') ) {
 				_this.find('.toggle_accordion').removeClass('active').next().slideUp();
@@ -62,12 +62,12 @@ jQuery(document).ready(function() {
 			return false;
 		});
 	});
-	
-	/* 
+
+	/*
 	 * Testimonial functions
 	 */
 	var testimonialsEl = jQuery('.widget_testimonial_module');
-	
+
 	if(testimonialsEl.length>0){
 		testimonialsEl.each(function(i) {
 			testimonialsElChildren = jQuery(this).children(':not(span)'),
@@ -105,20 +105,20 @@ jQuery(document).ready(function() {
 
 		});
 	}
-	
-	/* 
-	 * image reflect functions 
+
+	/*
+	 * image reflect functions
 	 */
 	jQuery('img.reflect').reflect({height:0.5,opacity:0.5});
-	
+
 	/*
-	 * prettyPhoto 
+	 * prettyPhoto
 	 */
 	jQuery("a[rel^='prettyPhoto'], a[rel^='lightbox']").prettyPhoto({
-		overlay_gallery: false, social_tools: '', 'theme': prettyphotoTheme /* light_square / dark_rounded / light_square / dark_square / facebook */															
+		overlay_gallery: false, social_tools: '', 'theme': prettyphotoTheme /* light_square / dark_rounded / light_square / dark_square / facebook */
 	});
-	
-	/* 
+
+	/*
 	 * spam protction on mailto: links
 	 */
 	jQuery('a.email_link_noreplace').nospam({
@@ -131,7 +131,7 @@ jQuery(document).ready(function() {
       filterLevel: 'normal'
     });
 
-	/* 
+	/*
 	 * Contact form submit
 	 */
 	jQuery('.contact_form_submit').click(function() {
@@ -140,13 +140,13 @@ jQuery(document).ready(function() {
 		mysitePreloaderSmall('.mysite_contact_feedback');
 		jQuery(this).next().css('display','inline-block');
 	});
-	
-	/* 
+
+	/*
 	 * "target_blank" links
 	 */
 	jQuery('.flickr_badge_image a').attr('target', '_blank');
 	jQuery('.target_blank').attr('target', '_blank');
-	
+
 });
 
 
@@ -181,10 +181,10 @@ function mysitePreloader(img_class) {
     var i,
 	positions;
 	i=0;
-		
+
 	positions=[-26,-52,-78,-104,-130,-156,-182,-208,-234,-260,-286,0];
 	positionsClass = 'center';
-	
+
 	preLoader=setInterval(function(){
 	jQuery(img_class +' img').css('background-position',positions[i]+'px ' +positionsClass);
 	i++;
@@ -200,10 +200,10 @@ function mysitePreloaderSmall(img_class) {
     var i,
 	positions;
 	i=0;
-	
+
 	positionsSmall=[-16,-32,-48,-64,-80,-96,-112,-128,-144,-160,-176,0];
 	positionsClassSmall = 'bottom';
-	
+
 	preLoaderSmall=setInterval(function(){
 	jQuery(img_class +' img').css('background-position',positionsSmall[i]+'px ' +positionsClassSmall);
 	i++;
@@ -219,10 +219,10 @@ function mysitePreloaderLarge(img_class) {
     var i,
 	positions;
 	i=0;
-	
+
 	positionsLarge=[-35,-70,-105,-140,-175,-210,-245,-280,-315,-350,-385,0];
 	positionsClassLarge = 'top';
-	
+
 	preLoaderLarge=setInterval(function(){
 	jQuery(img_class +' img').css('background-position',positionsLarge[i]+'px ' +positionsClassLarge);
 	i++;
@@ -296,20 +296,20 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 {
 	$(function() {
 		try {
-			
+
 			$('div.mysite_form > form').ajaxForm({
-				
+
 				data: { '_mysite_form_ajax_submit': 1 },
 				dataType: 'json',
 				success: function(data) {
 					if($.browser.safari){ bodyelem = $('body') } else { bodyelem = $('html') }
-					
+
 					jQuery(data.into).find(':input').each(function() {
 						jQuery(this).removeClass('required_error');
 					});
-					
+
 					if(data.errors) {
-						
+
 						if(data.errored_fields){
 							$('.mysite_message').remove();
 							for(var i in data.errored_fields){
@@ -320,7 +320,7 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 								jQuery('.mysite_contact_feedback').css('display','none');
 							});
 						}
-						
+
 						if(data.errored_fields == '' || !data.sidebar){
 							if(data.errors) {
 							  	bodyelem.animate({
@@ -333,10 +333,10 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 							}
 						}
 					}
-					 
+
 					if( data.mail_sent ) {
 						$('.mysite_message').remove();
-						$(data.into + ' > form').remove(); 
+						$(data.into + ' > form').remove();
 						bodyelem.animate({
 					    	scrollTop: $(data.into).offset().top-80
 					  		}, 'slow', function(){
@@ -345,14 +345,14 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 						});
 					}
 				}
-				 
+
 			});
-			
+
 		} catch (e) {
 			//suppress error
 		}
 	});
-	
+
 })(jQuery);
 
 /*
@@ -375,26 +375,26 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 			beforeShowAll: function(){},
 			onDone: function(){},
 			oneachload: function(image){}
-			
+
 		},
 		options = $.extend({}, defaults, options);
-		
+
 		var ua = $.browser,
 			uaVersion = ua.version.substring(0,1);
-		
+
 		if(options.imageResize == 'wordpress')
 			options.delay = 0;
-			
+
 		return this.each(function() {
-			
+
 			options.beforeShowAll.call(this);
-			
+
 			var $this = $(this),
 				 images = $this.find(options.imgSelector),
 				 count = images.length;
-				
+
 			$this.load = {
-				
+
 				preload: function(count) {
 					if(count>0) {
 						$this.load.loadImage(0,count);
@@ -404,7 +404,7 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 						return;
 					}
 				},
-				
+
 				loadImage: function(i,count) {
 					if(i<count) {
 						var imgId = Math.floor(Math.random()*1000)+'_img_';
@@ -412,15 +412,15 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 
 						if(options.imageResize == 'timthumb' || options.resizeDisabled == 'true')
 							$this.load.loader(i,$(images[i]).attr('src'),imgId);
-							
+
 						if( (options.imageResize == 'wordpress') && (options.resizeDisabled == false) )
 								$this.load.resize(i,imgId);
-						
+
 					} else {
 						options.onDone.call(this);
 					}
 				},
-				
+
 				append: function(i,imgId) {
 						$('<span id="'+imgId+(i+1)+'"></span>').each(function() {
 							if( options.imgAppend ) {
@@ -428,47 +428,47 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 							} else {
 								$(this).appendTo($(options.selector));
 							}
-						   	
+
 						});
 				},
-				
+
 				loader: function(i,image,imgId) {
 					var newImage = new Image(),
 						currImage = $('#'+imgId+(i+1)),
 						title = ( $(images[i]).attr('title') ) ? $(images[i]).attr('title') : '';
-						
+
 		        $(newImage).load(function () {
 					var currImgWidth = $(images[i]).attr('width'),
 						currImgHeight = $(images[i]).attr('height');
-			
+
 					$(this).attr('width', currImgWidth);
 					$(this).attr('height', currImgHeight);
-					
+
 						if(responsiveSite == 'true' && options.fade){
 							paddingBottom = currImgHeight*100/$(images[i]).attr('width');
 							$(images[i]).parent().parent().prepend('<span class="placeholder" style="padding-bottom:'+paddingBottom+'%;display:block;padding-top:'+imagePadding+'px;height:0;width:100%;"></span>');
 							$(images[i]).parent().remove();
-						
+
 						} else {
 							$(images[i]).parent().remove()
 						}
-					
-						
+
+
 						if( options.fade ) {
 							$(this).css('display','none');
 							$(currImage).append(this);
 
 							j = i+1;
-							
+
 							// Remove preloader
 							$(this).parent().prev().delay(j*options.delay).queue(function() {
 								$(this).remove();
-								
+
 								if(responsiveSite == 'true'){
 									currImage.prev().remove();
 								}
 							});
-							
+
 							// FadeIn image
 							$(this).delay(j*options.delay).fadeIn(options.fadein).queue(function() {
 								$(this).addClass($(images[i]).attr('class'));
@@ -486,26 +486,26 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 											}
 										}
 									}
-									
+
 									//$(this).parent().prev().remove();
-									
+
 								} else {
 									//$(this).parent().prev().remove();
 								}
-								
+
 							if( video_icon ){
 								$(this).parent().parent().css('backgroundImage','url(' +assetsUri+ '/play.png)');
-								
+
 							}else if(zoom_icon){
 								$(this).parent().parent().css('backgroundImage','url(' +assetsUri+ '/zoom.png)');
 							}
-							
+
 							options.oneachload.call(this, this);
 						});
 						if( (!ua.msie) || (uaVersion >= '9' && ua.msie) ){
 							$this.load.loadImage(i+1,count);
 						}
-						
+
 					} else {
 						$(this).addClass($(images[i]).attr('class'));
 						$(currImage).append(this);
@@ -514,7 +514,7 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 						}
 						options.oneachload.call(this, this);
 					}
-						
+
 		        }).error(function () {
 					// try to load next item
 					$this.load.loadImage(i+1,count);
@@ -522,21 +522,21 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 				  .attr('src', image)
 				  .attr('title', title)
 				  .attr('alt', $(images[i]).attr('alt'));
-				
+
 			 	  if(uaVersion <= '8' && ua.msie){
 					  $this.load.loadImage(i+1,count);
 				  }
-				
+
 				},
-				
+
 				resize: function(i,imgId) {
 					var imgResize = $('<input>', { type: 'text', name:'ajax_image_resize_url', val: $(images[i]).attr('src') })
 						imgWidth = $('<input>', { type: 'text', name:'img_width', val: $(images[i]).attr('width') }),
 						imgHeight = $('<input>', { type: 'text', name:'img_height', val: $(images[i]).attr('height') }),
 						j5M5601 = $('<input>', { type: 'text', name:'j5M5601', val: options.nonce });
-						
+
 					postData = imgResize.add(imgWidth).add(imgHeight).add(j5M5601).serialize();
-					
+
 					$.ajax({
 						type: 'POST',
 						dataType: 'json',
@@ -551,9 +551,9 @@ VimeoEmbed.vimeo_on_play = function(player_id) {
 					    }
 					});
 				}
-				
+
 			};
-			
+
 			$this.load.preload(count);
 		});
 	}
@@ -587,19 +587,19 @@ buildmenu:function(menuid, arrowsvar){
 			this._dimensions={w:this.offsetWidth, h:this.offsetHeight, subulw:$subul.outerWidth(), subulh:$subul.outerHeight()}
 			this.istopheader=$curobj.parents("ul").length==1? true : false
 			$subul.css({top:this.istopheader? this._dimensions.h+"px" : 0})
-			
+
 			/*
 			$curobj.children("a:eq(0)").css(this.istopheader? {paddingRight: arrowsvar.down[2]} : {}).append(
 				'<img src="'+ (this.istopheader? arrowsvar.down[1] : arrowsvar.right[1])
 				+'" class="' + (this.istopheader? arrowsvar.down[0] : arrowsvar.right[0])
 				+ '" style="border:0;" />'
 			)*/
-			
+
 			$curobj.hover(
 				function(e){
 					var $targetul=$(this).children("ul:eq(0)")
 					this._offsets={left:$(this).offset().left, top:$(this).offset().top}
-					
+
 					if(jQuery.browser.msie){
 						var menuleft=this.istopheader? 0 : this._dimensions.w +2
 						menuleft=(this._offsets.left+menuleft+this._dimensions.subulw>$(window).width())? (this.istopheader? -this._dimensions.subulw+this._dimensions.w : -this._dimensions.w) -4 : menuleft
@@ -615,7 +615,7 @@ buildmenu:function(menuid, arrowsvar){
 								jQuery(this).find('li').css('display','block')
 							}
 						  })
-						
+
 						if(jQuery.browser.msie){
 							ieVersion = jQuery.browser.version.substring(0,1);
 							if( ieVersion == 7 ){ var disableArrors = true; }
@@ -628,7 +628,7 @@ buildmenu:function(menuid, arrowsvar){
 							}
 						}
 					} //if 1 or less queued animations
-						
+
 				},
 				function(e){
 					var $targetul=$(this).children("ul:eq(0)")
@@ -663,7 +663,7 @@ if(disableSlidemenu == 'false' ){
 /**
 * hoverIntent r5 // 2007.03.27 // jQuery 1.1.2+
 * <http://cherne.net/brian/resources/jquery.hoverIntent.html>
-* 
+*
 * @param  f  onMouseOver function || An object with configuration options
 * @param  g  onMouseOut function  || Nothing (use configuration options object)
 * @author    Brian Cherne <brian@cherne.net>
@@ -677,33 +677,33 @@ if(disableSlidemenu == 'false' ){
  * to offer multiple easing options
  *
  * TERMS OF USE - jQuery Easing
- * 
- * Open source under the BSD License. 
- * 
+ *
+ * Open source under the BSD License.
+ *
  * Copyright © 2008 George McGinley Smith
  * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without modification, 
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this list of 
+ *
+ * Redistributions of source code must retain the above copyright notice, this list of
  * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list 
- * of conditions and the following disclaimer in the documentation and/or other materials 
+ * Redistributions in binary form must reproduce the above copyright notice, this list
+ * of conditions and the following disclaimer in the documentation and/or other materials
  * provided with the distribution.
- * 
- * Neither the name of the author nor the names of contributors may be used to endorse 
+ *
+ * Neither the name of the author nor the names of contributors may be used to endorse
  * or promote products derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
  * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
  *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
  *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
  * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
- * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
 */
 
@@ -712,7 +712,7 @@ else var s=p/(2*Math.PI)*Math.asin(c/a);return-(a*Math.pow(2,10*(t-=1))*Math.sin
 else var s=p/(2*Math.PI)*Math.asin(c/a);return a*Math.pow(2,-10*t)*Math.sin((t*d-s)*(2*Math.PI)/p)+c+b;},easeInOutElastic:function(x,t,b,c,d){var s=1.70158;var p=0;var a=c;if(t==0)return b;if((t/=d/2)==2)return b+c;if(!p)p=d*(.3*1.5);if(a<Math.abs(c)){a=c;var s=p/4;}
 else var s=p/(2*Math.PI)*Math.asin(c/a);if(t<1)return-.5*(a*Math.pow(2,10*(t-=1))*Math.sin((t*d-s)*(2*Math.PI)/p))+b;return a*Math.pow(2,-10*(t-=1))*Math.sin((t*d-s)*(2*Math.PI)/p)*.5+c+b;},easeInBack:function(x,t,b,c,d,s){if(s==undefined)s=1.70158;return c*(t/=d)*t*((s+1)*t-s)+b;},easeOutBack:function(x,t,b,c,d,s){if(s==undefined)s=1.70158;return c*((t=t/d-1)*t*((s+1)*t+s)+1)+b;},easeInOutBack:function(x,t,b,c,d,s){if(s==undefined)s=1.70158;if((t/=d/2)<1)return c/2*(t*t*(((s*=(1.525))+1)*t-s))+b;return c/2*((t-=2)*t*(((s*=(1.525))+1)*t+s)+2)+b;},easeInBounce:function(x,t,b,c,d){return c-jQuery.easing.easeOutBounce(x,d-t,0,c,d)+b;},easeOutBounce:function(x,t,b,c,d){if((t/=d)<(1/2.75)){return c*(7.5625*t*t)+b;}else if(t<(2/2.75)){return c*(7.5625*(t-=(1.5/2.75))*t+.75)+b;}else if(t<(2.5/2.75)){return c*(7.5625*(t-=(2.25/2.75))*t+.9375)+b;}else{return c*(7.5625*(t-=(2.625/2.75))*t+.984375)+b;}},easeInOutBounce:function(x,t,b,c,d){if(t<d/2)return jQuery.easing.easeInBounce(x,t*2,0,c,d)*.5+b;return jQuery.easing.easeOutBounce(x,t*2-d,0,c,d)*.5+c*.5+b;}});
 
-/* 
+/*
  * No Spam (1.3)
  * by Mike Branski (www.leftrightdesigns.com)
  * mikebranski@gmail.com
@@ -738,7 +738,7 @@ jQuery.fn.nospam = function(settings) {
 		replaceText: false, 	// optional, accepts true or false
 		filterLevel: 'normal' 	// optional, accepts 'low' or 'normal'
 	}, settings);
-	
+
 	return this.each(function(){
 		e = null;
 		if(settings.filterLevel == 'low') { // Can be a switch() if more levels added
