@@ -110,7 +110,8 @@ display:block;overflow:hidden;letter-spacing:.5px;font-size:10px;line-height:20p
 
 /* Intro & Breadcrumbs
 -------------------------------------------------------------- */
-#header+#intro h1,#header+#intro h5{color:inherit;}
+#header+#header+#intro h5{color:inherit;}
+#intro h1{color:black;}
 #intro a:hover{text-decoration:none;}
 #intro_inner{padding:25px 0;}
 #intro h3{font-size:24px;margin-bottom:0;letter-spacing:0.5px;line-height:125%;}
